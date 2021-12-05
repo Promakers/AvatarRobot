@@ -57,4 +57,16 @@ public class RobotSerial : MonoBehaviour
       //}
    }
 
+   public int MoveRobot (float head, float sr1, float sr2, float sl1, float sl2)
+	{
+      if (sp.IsOpen)
+		{
+			print("Writing ");
+         string cmd = $"#{head.ToString("000")}000{sr1.ToString("000")}{sr2.ToString("000")}000{sl1.ToString("000")}{sl2.ToString("000")}000000000000000";
+
+         sp.Write(cmd);
+		}
+
+      return 0;
+	}
 }

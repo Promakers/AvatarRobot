@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO.Ports;
 
 namespace Mediapipe.Unity
 {
@@ -19,6 +20,29 @@ namespace Mediapipe.Unity
 		[SerializeField] GameObject SLRollGO;
 		[SerializeField] GameObject SLPitchGO;
 		[SerializeField] GameObject LHandGO;
+
+		SerialPort sp;
+		float next_time; int ii = 0;
+		// Use this for initialization
+		void Awake()
+		{
+			string the_com = "COM4";
+			next_time = Time.time;
+
+			sp = new SerialPort("\\\\.\\" + the_com, 9600);
+			if (!sp.IsOpen)
+			{
+				print("Opening " + the_com + ", baud 9600");
+				sp.Open();
+				sp.ReadTimeout = 100;
+				sp.Handshake = Handshake.None;
+				if (sp.IsOpen)
+				{
+					print("Open");
+					sp.Write("#ALL");
+				}
+			}
+		}
 
 		protected override void Start()
 		{
@@ -117,6 +141,14 @@ namespace Mediapipe.Unity
 			//headGO.SendMessage("SetAngle", headAngle);
 			headGO.SendMessage("SetDirection", headAngle);
 
+			if (delayCount < delay)
+				delayCount+= Time.deltaTime;
+			else
+			{
+				MoveHead(headAngle);
+				delayCount = 0f;
+			}
+				
 			// Right Arm 12->14, (14 - 12)
 			Vector3 SRU = pointList[12].transform.position;
 			Vector3 SRD = pointList[16].transform.position;
@@ -129,6 +161,7 @@ namespace Mediapipe.Unity
 
 			Debug.Log($"SRR: {SRRollAngle}");
 			SRRollGO.SendMessage("SetAngle", SRRollAngle);
+			
 
 			// Right Arm Pitch
 			Vector3 RSUp = Vector3.Cross(-bodyRight, SR).normalized;
@@ -159,6 +192,39 @@ namespace Mediapipe.Unity
 			Debug.Log($"SLP: {SLPitchAngle}");
 			SLPitchGO.SendMessage("SetAngle", SLPitchAngle);
 
+		}
+
+
+		public int MoveRobot(float head, float sr1, float sr2, float sl1, float sl2)
+		{
+			if (sp.IsOpen)
+			{
+				print("Writing ");
+				string cmd = $"#{head.ToString("000")}000{sr1.ToString("000")}{sr2.ToString("000")}000{sl1.ToString("000")}{sl2.ToString("000")}000000000000000";
+
+				sp.Write(cmd);
+			}
+
+			return 0;
+		}
+
+		float delay = 0.3f;
+		float delayCount = 0f;
+		public int MoveHead(float dir)
+		{
+			
+			if (sp.IsOpen)
+			{
+				if ( dir > 5f)
+				{
+					sp.Write("#HEADRIGHT");
+				}
+				if (dir < -5f)
+				{
+					sp.Write("#HEADLEFT");
+				}
+			}
+			return 0;
 		}
 	}
 }
