@@ -19,9 +19,29 @@
 
 ## 프로젝트 배경 혹은 목적
 
-  <img src="https://user-images.githubusercontent.com/46912845/131213363-608d0e82-baed-48f6-909f-dc7a446c14c9.JPG" width="70%"></img>
-  <img src="https://user-images.githubusercontent.com/46912845/131213365-8ead6984-0a1f-40b9-9af9-dfd34c7bd5ac.JPG" width="70%"></img>  
-  <img src="https://user-images.githubusercontent.com/46912845/131219197-695edbd9-3f0d-40a3-be3b-1dedb05d3cd5.jpg" width="70%"></img>
+
+  <img src="https://user-images.githubusercontent.com/46912845/144732003-9a7d250c-a8ef-4c62-ac72-b213d5e4e78d.JPG" width="70%"></img>
+  <img src="https://user-images.githubusercontent.com/46912845/144732005-77bc757d-5043-4412-8d7d-06fb2adb6d1d.JPG" width="70%"></img>
+  <img src="https://user-images.githubusercontent.com/46912845/144732007-4b39c087-631e-4a60-abee-5c3b12169de2.JPG" width="70%"></img>
+  <img src="https://user-images.githubusercontent.com/46912845/144732008-908175d4-7a16-4cbc-8cb4-3219903420f5.JPG" width="70%"></img>
+  <img src="https://user-images.githubusercontent.com/46912845/144732010-b841ee6d-3d73-4f51-b005-f05071a21f07.JPG" width="70%"></img>
+  <img src="https://user-images.githubusercontent.com/46912845/144732011-f69902c9-750f-45a1-ab98-43ce114df152.JPG" width="70%"></img>
+  <img src="https://user-images.githubusercontent.com/46912845/144732012-a0e770d1-342e-4ee6-9f40-a99a72559211.JPG" width="70%"></img>
+  <img src="https://user-images.githubusercontent.com/46912845/144732013-b029095d-754d-4fed-ab5b-4d4dc4095deb.JPG" width="70%"></img>
+  <img src="https://user-images.githubusercontent.com/46912845/144732015-b7bf8fc0-d829-491d-9716-996f4dffbf53.JPG" width="70%"></img>
+  <img src="https://user-images.githubusercontent.com/46912845/144732016-5f61035d-611b-4679-982a-163903fac223.JPG" width="70%"></img>
+  <img src="https://user-images.githubusercontent.com/46912845/144732018-74d6a5c8-df38-4798-bf9e-eaabd5625589.JPG" width="70%"></img>
+  <img src="https://user-images.githubusercontent.com/46912845/144732019-9d478025-9aa6-4806-8613-5ccd2b1bc192.JPG" width="70%"></img>
+  <img src="https://user-images.githubusercontent.com/46912845/144732020-155023f7-5d2a-41c4-921f-1f9050af7caf.JPG" width="70%"></img>
+  <img src="https://user-images.githubusercontent.com/46912845/144732021-29107f44-2e8f-43ee-ae5f-d3394bcc5160.JPG" width="70%"></img>
+  <img src="https://user-images.githubusercontent.com/46912845/144732023-9cddd3bb-85c9-4c06-98e3-ec5d679ab0af.JPG" width="70%"></img>
+  <img src="https://user-images.githubusercontent.com/46912845/144732024-8783ee8e-b0d8-49dd-8559-88cb5ce71bd5.JPG" width="70%"></img>
+  <img src="https://user-images.githubusercontent.com/46912845/144732025-05ed777e-0464-4da4-be67-0b63bc7b3e02.JPG" width="70%"></img>
+  <img src="https://user-images.githubusercontent.com/46912845/144732027-c4769054-6eed-494d-a70c-1ffa90d8002a.JPG" width="70%"></img>
+  <img src="https://user-images.githubusercontent.com/46912845/144732028-8ccba9e0-98f6-4b54-8229-16436102297e.JPG" width="70%"></img>
+  <img src="https://user-images.githubusercontent.com/46912845/144732029-cb900129-ff33-4f47-a290-6a0fcc69a926.JPG" width="70%"></img>
+
+
   
   + MLX90614 비접촉 온도센서 연동 성공
   + HC-SR04 (초음파 센서) - 정확한 Timer 10u Sec제어와 Start Time / End Time 방법을 찾지 못하여 다음번에 도전
