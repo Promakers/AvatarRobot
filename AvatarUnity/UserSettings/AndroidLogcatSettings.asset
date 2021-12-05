@@ -1,0 +1,113 @@
+{
+    "m_SelectedDeviceId": "1WMHH823KM0375",
+    "m_SelectedPackage": {
+        "deviceId": "3d32ea78",
+        "name": "com.DefaultCompany.com.unity.template.mobile2D",
+        "processId": 28111,
+        "exited": false
+    },
+    "m_SelectedPriority": 0,
+    "m_KnownPackagesForSerialization": [
+        {
+            "deviceId": "R3CMC07CDDL",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 19111,
+            "exited": false
+        },
+        {
+            "deviceId": "R3CMC07CDDL",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 14457,
+            "exited": false
+        },
+        {
+            "deviceId": "R3CMC07CDDL",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 10379,
+            "exited": false
+        },
+        {
+            "deviceId": "3d32ea78",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 18577,
+            "exited": true
+        },
+        {
+            "deviceId": "3d32ea78",
+            "name": "com.sec.android.app.launcher",
+            "processId": 5847,
+            "exited": false
+        },
+        {
+            "deviceId": "3d32ea78",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 20675,
+            "exited": false
+        },
+        {
+            "deviceId": "3d32ea78",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 23303,
+            "exited": false
+        },
+        {
+            "deviceId": "3d32ea78",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 28111,
+            "exited": false
+        }
+    ],
+    "m_Tags": {
+        "m_Entries": [
+            {
+                "m_Name": "Filter by all listed tags",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "No Filter",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "Tag Control...",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "Unity",
+                "m_Selected": true
+            },
+            {
+                "m_Name": "CRASH",
+                "m_Selected": false
+            }
+        ]
+    },
+    "m_MemoryViewerState": {
+        "MemoryWindowHeight": 300.0,
+        "MemoryWindowWidth": 170.0,
+        "MemoryTypeEnabled": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        "MemoryGroup": 2,
+        "Behavior": 0
+    },
+    "m_Filter": "",
+    "m_FilterIsRegularExpression": false,
+    "m_SymbolPaths": []
+}
