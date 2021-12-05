@@ -31,24 +31,23 @@
    + server_restapi는 Upload된 Image의 마스크 유무 판단하여 JOSN형태로 결과 반환
 
 
-## 파일 리스트
+## Folder List
 
+### JetsonNano
+  + Web Interface를 통한 카메라 확인 및 로봇 실시간 제어
+  + 아바타 로봇과 Serial통신
 
-### UI (최윤규)
-
-  + KioskCafeteriaTutorial 예제를 활용한 키오스크 구현
-  + https://github.com/Promakers/TopMaker2021/tree/main/KioskCafeteriaTutorial 참조
-
-### server_restapi (권준호)
-  + Web API Server
-  + Upload된 이미지의 마스크 유무를 판단하여 JSON형태로 결과 반환
+### Arduino
+  + 아바타 로봇 관절 (서보 7개) 제어
+  + 아바타 로보트 Serial 통신 / Bluetooth 통신 규약
   
-### Tizen_respapi_test (권준호)
-  + 타이젠에서 Res API 이미지 확인 테스트 코드
+### Unity
+  + 아바타 로봇 시뮬레이터
+  + 사용자 동작 인식 및 아바타 로봇 제어
 
-### MLX90614 비접촉 온도 센서 (김도혁)
-
-  + 아두이노 https://github.com/adafruit/Adafruit-MLX90614-Library 참조하여 타이젠 C# 클래스 제작  
+### AI 이미지
+  + 이미지 Size Up
+  
 
  ## 보드 
  
