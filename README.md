@@ -57,6 +57,7 @@
 
 ### AI 이미지
   + 이미지 Size Up
+  + https://colab.research.google.com/gist/JingyunLiang/a5e3e54bc9ef8d7bf594f6fee8208533/swinir-demo-on-real-world-image-sr.ipynb
   
 
  ## 보드 
