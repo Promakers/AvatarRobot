@@ -4,8 +4,9 @@
 
 ## 시연 동영상
 
-[![Watch the video](https://tistory2.daumcdn.net/tistory/2946431/skin/images/main_key_events_4005.png)](https://youtu.be/493mAYvdQsk)
+[![Watch the video](https://user-images.githubusercontent.com/46912845/144732232-8faf29fa-e74c-445a-8178-d53177432af3.jpg)](https://youtu.be/493mAYvdQsk)
 * 이미지 클릭시 동영상이 재생 됩니다.
+
 
 
 ## Pro Makers (김도혁/유수엽/최윤규/권준호/강진호)
