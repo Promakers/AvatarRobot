@@ -41,16 +41,6 @@
   <img src="https://user-images.githubusercontent.com/46912845/144732028-8ccba9e0-98f6-4b54-8229-16436102297e.JPG" width="70%"></img>
   <img src="https://user-images.githubusercontent.com/46912845/144732029-cb900129-ff33-4f47-a290-6a0fcc69a926.JPG" width="70%"></img>
 
-
-  
-  + MLX90614 비접촉 온도센서 연동 성공
-  + HC-SR04 (초음파 센서) - 정확한 Timer 10u Sec제어와 Start Time / End Time 방법을 찾지 못하여 다음번에 도전
-  + 카메라 연동
-    
-  <img src="https://user-images.githubusercontent.com/46912845/131221167-89724ca0-befc-4e6a-9ab2-796677422601.png" width="70%"></img>
-   + server_restapi는 Upload된 Image의 마스크 유무 판단하여 JOSN형태로 결과 반환
-
-
 ## Folder List
 
 ### JetsonNano
