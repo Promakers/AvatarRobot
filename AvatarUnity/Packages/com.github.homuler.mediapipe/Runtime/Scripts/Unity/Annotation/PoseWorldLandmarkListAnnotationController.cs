@@ -21,6 +21,12 @@ namespace Mediapipe.Unity
 		[SerializeField] GameObject SLPitchGO;
 		[SerializeField] GameObject LHandGO;
 
+		[SerializeField] GameObject L;
+		[SerializeField] GameObject R;
+
+		[SerializeField] GameObject L2;
+		[SerializeField] GameObject R2;
+
 		SerialPort sp;
 		float next_time; int ii = 0;
 		// Use this for initialization
@@ -121,54 +127,62 @@ namespace Mediapipe.Unity
 
 			Debug.DrawRay(HL, headRight * 20f, Color.red);
 			Debug.DrawRay(BL, bodyRight * 30f, Color.magenta);
+			Debug.DrawRay(transform.position, headRight * 20f, Color.red, 0.1f);
+			//Debug.DrawRay(transform.position, bodyRight * 30f, Color.magenta, 0.1f);
 
 			Vector3 headF = Vector3.Cross(headRight, Vector3.up).normalized;
 			Vector3 bodyF = Vector3.Cross(bodyRight, Vector3.up).normalized;
 
+			Vector3 bodyUp = pointList[0].transform.position - (BL + bodyRight * 0.5f);
+
 			Debug.DrawRay(HL, headF * 20f, Color.blue);
 			Debug.DrawRay(BL, bodyF * 30f, Color.cyan);
+			Debug.DrawRay(transform.position, headF * 20f, Color.black, 0.1f);
 
-			Vector3 headFP = Vector3.ProjectOnPlane(headF, Vector3.up).normalized;
-			Vector3 bodyFP = Vector3.ProjectOnPlane(bodyF, Vector3.up).normalized;
 
-			Debug.DrawRay(Vector3.zero, headFP * 20f, Color.blue);
-			Debug.DrawRay(Vector3.zero, bodyFP * 30f, Color.cyan);
+			Vector3 headFP = Vector3.ProjectOnPlane(headF, bodyUp).normalized;
+
+			//Vector3 bodyFP = Vector3.back;
+			Vector3 bodyFP = Vector3.ProjectOnPlane(bodyF, bodyUp).normalized;
+
+			Debug.DrawRay(transform.position, headFP * 20f, Color.blue, 0.1f);
+			Debug.DrawRay(transform.position, bodyFP * 30f, Color.cyan, 0.1f);
 
 			float headAngle = Vector3.SignedAngle(bodyFP, headFP, Vector3.up);
-			//float headAngle = Vector3.SignedAngle(Vector3.back, headFP, Vector3.up);
-
-			Debug.Log($"ha: {headAngle}");
+			
+			//Debug.Log($"ha: {headAngle}");
 			//headGO.SendMessage("SetAngle", headAngle);
 			headGO.SendMessage("SetDirection", headAngle);
 
 			if (delayCount < delay)
-				delayCount+= Time.deltaTime;
+			{
+				delayCount += Time.deltaTime;
+			}
 			else
 			{
 				MoveHead(headAngle);
 				delayCount = 0f;
 			}
-				
+			
 			// Right Arm 12->14, (14 - 12)
 			Vector3 SRU = pointList[12].transform.position;
 			Vector3 SRD = pointList[16].transform.position;
 			
 			Vector3 SR = (SRD - SRU).normalized;
-			Debug.DrawRay(SRU, SR * 20f, Color.blue);
+			//Debug.DrawRay(SRU, SR * 20f, Color.blue);
 
 			Vector3 SRRoll = Vector3.ProjectOnPlane(SR, bodyRight).normalized;
 			float SRRollAngle = Vector3.SignedAngle(Vector3.down, SRRoll, bodyRight);
 
-			Debug.Log($"SRR: {SRRollAngle}");
+			//Debug.Log($"SRR: {SRRollAngle}");
 			SRRollGO.SendMessage("SetAngle", SRRollAngle);
 			
-
 			// Right Arm Pitch
 			Vector3 RSUp = Vector3.Cross(-bodyRight, SR).normalized;
 			Vector3 bodyFPRS = Vector3.ProjectOnPlane(bodyF, RSUp).normalized;
 			float SRPitchAngle = Vector3.SignedAngle(bodyFPRS, SR, RSUp);
 
-			Debug.Log($"SRP: {SRPitchAngle}");
+			//Debug.Log($"SRP: {SRPitchAngle}");
 			SRPitchGO.SendMessage("SetAngle", SRPitchAngle);
 
 			// Left Arm 11->13, (13 - 11)
@@ -176,12 +190,12 @@ namespace Mediapipe.Unity
 			Vector3 SLD = pointList[15].transform.position;
 
 			Vector3 SL = (SLD - SLU).normalized;
-			Debug.DrawRay(SLU, SL * 20f, Color.red);
+			//Debug.DrawRay(SLU, SL * 20f, Color.red);
 
 			Vector3 SLRoll = Vector3.ProjectOnPlane(SL, bodyRight).normalized;
 			float SLRollAngle = Vector3.SignedAngle(Vector3.down, SLRoll, bodyRight);
 
-			Debug.Log($"SLR: {SLRollAngle}");
+			//Debug.Log($"SLR: {SLRollAngle}");
 			SLRollGO.SendMessage("SetAngle", SLRollAngle);
 
 			// Right Arm Pitch
@@ -189,9 +203,24 @@ namespace Mediapipe.Unity
 			Vector3 bodyFPLS = Vector3.ProjectOnPlane(bodyF, LSUp).normalized;
 			float SLPitchAngle = -Vector3.SignedAngle(bodyFPLS, SL, LSUp);
 
-			Debug.Log($"SLP: {SLPitchAngle}");
+			//Debug.Log($"SLP: {SLPitchAngle}");
 			SLPitchGO.SendMessage("SetAngle", SLPitchAngle);
 
+			if (headAngle < -1)
+			{
+				L2.transform.localScale = new Vector3(Mathf.Abs(headAngle) / 100f, L2.transform.localScale.y, L2.transform.localScale.z);
+				R2.transform.localScale = new Vector3(0.01f, R2.transform.localScale.y, R2.transform.localScale.z);
+			}
+			else if (headAngle > 1)
+			{
+				L2.transform.localScale = new Vector3(0.01f, L2.transform.localScale.y, L2.transform.localScale.z);
+				R2.transform.localScale = new Vector3(Mathf.Abs(headAngle) / 100f, R2.transform.localScale.y, R2.transform.localScale.z);
+			}
+			else
+			{
+				L2.transform.localScale = new Vector3(0.01f, L2.transform.localScale.y, L2.transform.localScale.z);
+				R2.transform.localScale = new Vector3(0.01f, R2.transform.localScale.y, R2.transform.localScale.z);
+			}
 		}
 
 
@@ -215,13 +244,24 @@ namespace Mediapipe.Unity
 			
 			if (sp.IsOpen)
 			{
-				if ( dir > 5f)
+				if ( dir > 8f)
 				{
 					sp.Write("#HEADRIGHT");
+					R.transform.localScale = new Vector3(dir / 100f, R.transform.localScale.y, R.transform.localScale.z);
+					R.SetActive(true);
+					L.SetActive(false);
 				}
-				if (dir < -5f)
+				else if (dir < -8f)
 				{
 					sp.Write("#HEADLEFT");
+					L.transform.localScale = new Vector3(dir / 100f, L.transform.localScale.y, L.transform.localScale.z);
+					L.SetActive(true);
+					R.SetActive(false);
+				}
+				else
+				{
+					L.SetActive(false);
+					R.SetActive(false);
 				}
 			}
 			return 0;
